@@ -1,6 +1,8 @@
 package com.marcos.cheapgas.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,6 +24,8 @@ public class Posto_combustivel implements Serializable{
     @ManyToOne
     @JoinColumn(name = "localizacao_id")
     private Localizacao localizacao; 
+
+    private List<Valor> valor = new ArrayList<>();
 
     public Posto_combustivel() {
         super();
@@ -56,6 +60,14 @@ public class Posto_combustivel implements Serializable{
 
     public void setLocalizacao(Localizacao localizacao) {
         this.localizacao = localizacao;
+    }
+
+    public List<Valor> getValor() {
+        return valor;
+    }
+
+    public void setValor(List<Valor> valor) {
+        this.valor = valor;
     }
 
     @Override
