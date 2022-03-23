@@ -10,9 +10,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
-public class Posto_Combustivel implements Serializable{
+public class PostoCombustivel implements Serializable{
 
     private static final long serialVersionUID = 1L;
 
@@ -25,13 +26,14 @@ public class Posto_Combustivel implements Serializable{
     @JoinColumn(name = "localizacao_id")
     private Localizacao localizacao; 
 
+    @OneToMany(mappedBy = "postoCombustivel")
     private List<Valor> valor = new ArrayList<>();
 
-    public Posto_Combustivel() {
+    public PostoCombustivel() {
         super();
     }  
 
-    public Posto_Combustivel(Integer id, String nome, Localizacao localizacao) {
+    public PostoCombustivel(Integer id, String nome, Localizacao localizacao) {
         this.id = id;
         this.nome = nome;
         this.localizacao = localizacao;
@@ -86,7 +88,7 @@ public class Posto_Combustivel implements Serializable{
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Posto_Combustivel other = (Posto_Combustivel) obj;
+        PostoCombustivel other = (PostoCombustivel) obj;
         if (id == null) {
             if (other.id != null)
                 return false;
@@ -94,9 +96,5 @@ public class Posto_Combustivel implements Serializable{
             return false;
         return true;
     }
-
-    
-
-
     
 }

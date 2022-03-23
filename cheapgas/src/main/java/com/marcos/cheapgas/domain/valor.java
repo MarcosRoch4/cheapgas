@@ -1,3 +1,4 @@
+
 package com.marcos.cheapgas.domain;
 
 import java.io.Serializable;
@@ -17,11 +18,11 @@ public class Valor implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;    
-    private Float valor;
+    private Double valor;
 
     @ManyToOne
-    @JoinColumn(name = "posto_combustivel_id")
-    private Posto_Combustivel posto_combustivel;
+    @JoinColumn(name = "postoCombustivel_id")
+    private PostoCombustivel postoCombustivel;
 
     @ManyToOne
     @JoinColumn(name = "combustivel_id")
@@ -31,10 +32,10 @@ public class Valor implements Serializable{
         super();
     }
 
-    public Valor(Integer id, Float valor, Posto_Combustivel posto_combustivel, Combustivel combustivel) {
+    public Valor(Integer id, double d, PostoCombustivel postoCombustivel, Combustivel combustivel) {
         this.id = id;
-        this.valor = valor;
-        this.posto_combustivel = posto_combustivel;
+        this.valor = d;
+        this.postoCombustivel = postoCombustivel;
         this.combustivel = combustivel;
     }
 
@@ -46,20 +47,20 @@ public class Valor implements Serializable{
         this.id = id;
     }
 
-    public Float getValor() {
+    public Double getValor() {
         return valor;
     }
 
-    public void setValor(Float valor) {
+    public void setValor(Double valor) {
         this.valor = valor;
     }
 
-    public Posto_Combustivel getPosto_combustivel() {
-        return posto_combustivel;
+    public PostoCombustivel getPostoCombustivel() {
+        return postoCombustivel;
     }
 
-    public void setPosto_combustivel(Posto_Combustivel posto_combustivel) {
-        this.posto_combustivel = posto_combustivel;
+    public void setPostoCombustivel(PostoCombustivel postoCombustivel) {
+        this.postoCombustivel = postoCombustivel;
     }
 
     public Combustivel getCombustivel() {

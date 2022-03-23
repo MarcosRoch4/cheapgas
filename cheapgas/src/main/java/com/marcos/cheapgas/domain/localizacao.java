@@ -21,10 +21,8 @@ public class Localizacao implements Serializable {
     private String endereco;
     
     @OneToMany(mappedBy = "localizacao")
-    private List<Posto_Combustivel> posto_combustivel = new ArrayList<>();
+    private List<PostoCombustivel> postoCombustivel = new ArrayList<>();
 
-    
- 
 
 public Localizacao() {
      super();
@@ -51,12 +49,12 @@ public void setEndereco(String endereco) {
     this.endereco = endereco;
 }
 
-public List<Posto_Combustivel> getPosto_combustivel() {
-    return posto_combustivel;
+public List<PostoCombustivel> getPostoCombustivel() {
+    return postoCombustivel;
 }
 
-public void setPosto_combustivel(List<Posto_Combustivel> posto_combustivel) {
-    this.posto_combustivel = posto_combustivel;
+public void setPostoCombustivel(List<PostoCombustivel> postoCombustivel) {
+    this.postoCombustivel = postoCombustivel;
 }
 
 @Override
