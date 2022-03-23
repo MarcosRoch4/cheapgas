@@ -21,7 +21,7 @@ public class Valor implements Serializable{
 
     @ManyToOne
     @JoinColumn(name = "posto_combustivel_id")
-    private Posto_combustivel posto_combustivel;
+    private Posto_Combustivel posto_combustivel;
 
     @ManyToOne
     @JoinColumn(name = "combustivel_id")
@@ -31,7 +31,7 @@ public class Valor implements Serializable{
         super();
     }
 
-    public Valor(Integer id, Float valor, Posto_combustivel posto_combustivel, Combustivel combustivel) {
+    public Valor(Integer id, Float valor, Posto_Combustivel posto_combustivel, Combustivel combustivel) {
         this.id = id;
         this.valor = valor;
         this.posto_combustivel = posto_combustivel;
@@ -54,11 +54,11 @@ public class Valor implements Serializable{
         this.valor = valor;
     }
 
-    public Posto_combustivel getPosto_combustivel() {
+    public Posto_Combustivel getPosto_combustivel() {
         return posto_combustivel;
     }
 
-    public void setPosto_combustivel(Posto_combustivel posto_combustivel) {
+    public void setPosto_combustivel(Posto_Combustivel posto_combustivel) {
         this.posto_combustivel = posto_combustivel;
     }
 

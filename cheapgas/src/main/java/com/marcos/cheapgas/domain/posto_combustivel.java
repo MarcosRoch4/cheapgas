@@ -12,7 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Posto_combustivel implements Serializable{
+public class Posto_Combustivel implements Serializable{
 
     private static final long serialVersionUID = 1L;
 
@@ -27,11 +27,11 @@ public class Posto_combustivel implements Serializable{
 
     private List<Valor> valor = new ArrayList<>();
 
-    public Posto_combustivel() {
+    public Posto_Combustivel() {
         super();
     }  
 
-    public Posto_combustivel(Integer id, String nome, Localizacao localizacao) {
+    public Posto_Combustivel(Integer id, String nome, Localizacao localizacao) {
         this.id = id;
         this.nome = nome;
         this.localizacao = localizacao;
@@ -86,7 +86,7 @@ public class Posto_combustivel implements Serializable{
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Posto_combustivel other = (Posto_combustivel) obj;
+        Posto_Combustivel other = (Posto_Combustivel) obj;
         if (id == null) {
             if (other.id != null)
                 return false;
