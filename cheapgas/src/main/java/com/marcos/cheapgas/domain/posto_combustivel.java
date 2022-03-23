@@ -1,23 +1,38 @@
 package com.marcos.cheapgas.domain;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.Serializable;
 
-public class posto_combustivel {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Posto_combustivel implements Serializable{
+
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
     
-    private localizacao localizacao; 
+    @ManyToOne
+    @JoinColumn(name = "localizacao_id")
+    private Localizacao localizacao; 
 
-    public posto_combustivel() {
+    public Posto_combustivel() {
         super();
     }  
 
-    public posto_combustivel(Integer id, String nome, com.marcos.cheapgas.domain.localizacao localizacao) {
+    public Posto_combustivel(Integer id, String nome, Localizacao localizacao) {
         this.id = id;
         this.nome = nome;
         this.localizacao = localizacao;
     }
+    
 
     public Integer getId() {
         return id;
@@ -35,11 +50,11 @@ public class posto_combustivel {
         this.nome = nome;
     }
 
-    public localizacao getLocalizacao() {
+    public Localizacao getLocalizacao() {
         return localizacao;
     }
 
-    public void setLocalizacao(localizacao localizacao) {
+    public void setLocalizacao(Localizacao localizacao) {
         this.localizacao = localizacao;
     }
 
@@ -59,7 +74,7 @@ public class posto_combustivel {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        posto_combustivel other = (posto_combustivel) obj;
+        Posto_combustivel other = (Posto_combustivel) obj;
         if (id == null) {
             if (other.id != null)
                 return false;
