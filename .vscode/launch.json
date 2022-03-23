@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-CheapgasApplication<cheapgas>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.marcos.cheapgas.CheapgasApplication",
+            "projectName": "cheapgas",
+            "args": ""
+        }
+    ]
+}
